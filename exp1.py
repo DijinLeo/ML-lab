@@ -47,3 +47,23 @@ plt.xlabel("Epoch")
 plt.ylabel("Cost")
 plt.grid(True)
 plt.show()
+index = np.argsort(X_test.flatten())
+
+plt.figure(figsize=(8,5))
+
+plt.scatter(X_test,y_test,color='blue',label='Actual Data')
+
+plt.plot(
+    X_test.flatten()[index],
+    y_pred_ne[index],
+    color='red',
+    linewidth=2,
+    label='Regression Line'
+)
+
+plt.title('Linear Regression')
+plt.xlabel('Average Rooms')
+plt.ylabel('Median House Value')
+plt.legend()
+plt.grid(True)
+plt.show()
